@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-toolbar>
+            <ion-icon name="return-up-back-outline" (click)="settings()"></ion-icon>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <ion-title>Cycle</ion-title>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <img src="/assets/reading-side.svg" alt="">
+          </ion-toolbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>   
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- SELECT CYCLE LENGTH -->
+  <div class="items">
+      <ion-label>Cycle Length</ion-label>
+      <ion-select aria-label="cycle-length" interface="popover" placeholder="30 days">
+        <ion-select-option value="29">29 days below</ion-select-option>
+        <ion-select-option value="30">30 days</ion-select-option>
+        <ion-select-option value="31">31 days</ion-select-option>
+        <ion-select-option value="32">32 days</ion-select-option>
+        <ion-select-option value="33">33 days</ion-select-option>
+        <ion-select-option value="34">34 days</ion-select-option>
+        <ion-select-option value="35 above">35 days above</ion-select-option>
+      </ion-select>
+  </div>
+
+  <!-- SELECT PERIOD LENGTH -->
+  <div class="items">
+      <ion-label>Period Length</ion-label>
+      <ion-select aria-label="period-length" interface="popover" placeholder="6 days">
+        <ion-select-option value="5">5 days below</ion-select-option>
+        <ion-select-option value="6">6 days</ion-select-option>
+        <ion-select-option value="7">7 days</ion-select-option>
+        <ion-select-option value="8">8 days</ion-select-option>
+        <ion-select-option value="9 above">9 days above</ion-select-option>
+      </ion-select>
+  </div>
+
+  <p>The app makes predcitions based on the cycle and period length settings.</p>
+  <div class="items">
+      <ion-label>Chance of getting pregnant</ion-label>
+      <ion-toggle [checked]="true"></ion-toggle>
+  </div>
+  <p>If you turn off this parameter, only the ovulation day will be displayed.</p>
+
+  <!-- SELECT PHASE -->
+  <div class="items">
+      <ion-label>Luteal Phase</ion-label>
+      <ion-select aria-label="luteal-phase" interface="popover" placeholder="Select">
+        <ion-select-option value="1">First Phase</ion-select-option>
+        <ion-select-option value="2">Second Phase</ion-select-option>
+        <ion-select-option value="3">Third Phase</ion-select-option>
+      </ion-select>
+  </div>
+  <p>Luteal phase is the time between your ovulation and the beginning of your period.</p>
+  <div class="items">
+      <ion-label>Display cycle sequence</ion-label>
+      <ion-toggle [checked]="false"></ion-toggle>
+  </div>
+  <p>The cycle sequence will be displayed right above the calendar dates.</p>
+</ion-content>

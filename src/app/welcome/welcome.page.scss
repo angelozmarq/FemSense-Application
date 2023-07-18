@@ -1,0 +1,77 @@
+*{
+    font-family: "Patrick";
+    box-sizing: border-box;
+}
+
+ion-content{
+    --background: linear-gradient(0deg, var(--clr-primary), var(--clr-tertiary));
+    --padding-end: 0;
+    --padding-start: 0;
+}
+
+ion-button {
+    --background: var(--clr-primary);
+    --background-hover: var(--clr-primary);
+    --background-activated: var(--clr-secondary);
+    --background-focused: #88f4be;
+  
+    --color: var(--clr-neutral);
+  
+    --ripple-color: var(--clr-secondary);
+  
+    --padding-top: .25rem;
+    --padding-bottom: .25rem;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+  }
+
+// Swiper Styles
+.content swiper-container{
+    position: absolute;
+    // height: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: var(--clr-neutral);
+    // padding-bottom: 3rem;
+  }
+  
+  .content swiper-slide{
+    padding: 1rem;
+  }
+  
+  .content .swiper-pagination-bullets{
+    top: 200px;
+  }
+  
+  .content swiper-container ion-card{
+    height: 100%;
+  }
+  
+  .content swiper-container img{
+    max-width: 100%;
+  }
+  
+  #swiper ion-card{
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-neutral);
+    box-shadow: none;
+  }
+  
+  #swiper img{
+    background: linear-gradient(0deg, var(--clr-primary), var(--clr-secondary), var(--clr-tertiary));
+    // background-color: var(--clr-secondary);
+    height: 400px;
+    width: 100%;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    object-fit: contain;
+    object-position: center;
+  }
+  
+  #swiper ion-card-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--clr-primary);
+    margin: 0;
+  }

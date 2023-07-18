@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+  <body class="body">
+
+    <!-- HEADER -->
+    <div class="header">
+      <ion-card>
+        <img src="/assets/reading-side.svg" alt="">
+        <div>
+          <ion-card-title>Hi Juana,</ion-card-title>
+          <ion-card-subtitle>Your current cycle</ion-card-subtitle>
+        </div>
+      </ion-card>
+    </div>
+
+    <div class="info">
+      <div class="bg2">
+        <ion-card></ion-card>
+      </div>
+      <div class="bg">
+        <ion-card></ion-card>
+      </div>
+      <div class="fg">
+        <ion-card>
+          <div>
+            <ion-card-title>Today</ion-card-title>
+            <ion-card-subtitle>Current Cycle: 12</ion-card-subtitle>
+          </div>
+        </ion-card>
+      </div>
+    </div>
+    <div class="grid">
+      <ion-grid>
+        <ion-row class="category">
+          <ion-col id="next-period-col">
+              <ion-label id="next-period-label">Next Period</ion-label>
+          </ion-col>
+          <ion-col>
+              <ion-label>Pregnancy Chance</ion-label>
+          </ion-col>
+          <ion-col>
+              <ion-label>Current Phase</ion-label>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row class="category_data">
+          <ion-col>
+              <ion-label>18 Days</ion-label>
+          </ion-col>
+          <ion-col>
+              <ion-label>Low</ion-label>
+          </ion-col>
+          <ion-col>
+              <ion-label>Follicular</ion-label>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="category_img">
+          <ion-col>
+              <img class="svg" src="assets/calendar.svg" alt="next_period_logo">
+          </ion-col>
+          <ion-col>
+              <img class="svg" src="assets/pregnant.svg" alt="next_period_logo">
+          </ion-col>
+          <ion-col>
+              <img class="svg" src="assets/cycle.svg" alt="next_period_logo">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </body>
+</ion-content>

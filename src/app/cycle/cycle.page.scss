@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    font-family: "Patrick";
+}
+
+ion-header, ion-toolbar, ion-grid, ion-row, ion-col, ion-title, ion-card, ion-item, p, ion-label{
+    padding: 0;
+    margin: 0;
+}
+
+ion-header{
+    box-shadow: none;
+    --background: var(--clr-primary);
+}
+
+.header{
+    text-align: center;
+    vertical-align: middle;
+    color: var(--clr-neutral);
+}
+
+ion-toolbar{
+    --background: var(--clr-primary);
+    color: var(--clr-neutral);
+    --padding-top: .5rem;
+    --padding-bottom: .5rem;
+}
+
+ion-toolbar div{
+    display: grid;
+}
+
+.header ion-icon{
+    height: 30px;
+    width: 30px;
+}
+
+.header ion-title{
+    font-weight: 600;
+}
+
+.header img{
+    height: 35px;
+    width: 35px;
+    object-fit: contain;
+    border-radius: 50%;
+    outline: 1px solid var(--clr-neutral);
+}
+
+ion-content{
+    // --background: linear-gradient(0deg, var(--clr-primary), var(--clr-tertiary));
+    --background: var(--clr-neutral);
+}
+
+// Body Styles
+.items{
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.items ion-select{
+    width: 75px;
+    display: grid;
+    justify-content: flex-end;
+}
+
+.items ion-select-popover{
+    width: 100px;
+}
+
+.items ion-toggle{
+    --track-background: var(--clr-primary);
+    --track-background-checked: var(--clr-secondary);
+
+    --handle-background: var(--clr-neutral);
+    --handle-background-checked: var(--clr-neutral);
+}
+
+.items:first-of-type{
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+}
+
+.items:not(:first-of-type){
+    padding-bottom: 0;
+}
+
+p{
+    padding: 0 1rem;
+    padding-bottom: .5rem;
+    font-size: .75rem;
+    color: rgb(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+}
+
+.items, p{
+    background-color: rgb(249, 249, 249, 0.3);
+}
+
+p:last-child{
+    padding-bottom: 1rem;
+}

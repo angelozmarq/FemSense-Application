@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-toolbar>
+            <ion-icon name="return-up-back-outline" (click)="home()"></ion-icon>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <ion-title>Resources</ion-title>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <img src="/assets/reading-side.svg" alt="user icon">
+          </ion-toolbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <!-- SEARCHBAR -->
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="search()"></ion-searchbar>   
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="filteredResources.length > 0">
+      <ion-card *ngFor="let resources of filteredResources">
+        <img alt="" [src]="'assets/resources-links-img/' + resources.image + '.jpg'" />
+        <ion-card-header>
+          <ion-card-title>{{ resources.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{resources.content}}</ion-card-content>
+        <ion-card-subtitle>
+          <ion-icon name="heart-outline"></ion-icon>
+          <div>
+            <ion-icon name="book-outline"></ion-icon>
+            <a href={{resources.link}}>Read more...</a>
+          </div>
+        </ion-card-subtitle>
+      </ion-card>
+  </ion-list>
+  <ion-text *ngIf="filteredResources.length === 0 && searchTerm">
+    No results found for "{{ searchTerm }}"
+  </ion-text>
+</ion-content>

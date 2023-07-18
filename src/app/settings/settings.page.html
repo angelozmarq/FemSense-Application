@@ -1,0 +1,128 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-toolbar>
+            <ion-icon name="return-up-back-outline" (click)="home()"></ion-icon>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <ion-title>Settings</ion-title>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <img src="/assets/reading-side.svg" alt="">
+          </ion-toolbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>   
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-card>
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <div>
+        <ion-card-title>Juana</ion-card-title>
+        <ion-button shape="round" (click)="login()">
+          <a>Logout</a>
+          <ion-icon name="power-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card>
+    <div class="premium-btn">
+      <ion-button shape="round">
+        Upgrade to Premium
+      </ion-button>
+    </div>
+  </div>
+  <div class="goal">
+    <div class="goal-label">
+      <ion-label>My Goal:</ion-label>
+    </div>
+    <div class="goal-btn">
+      <ion-button shape="round">
+        Track Cycle
+      </ion-button>
+      <ion-button shape="round">
+        Get Pregnant
+      </ion-button>
+      <ion-button shape="round">
+        Track Pregnancy
+      </ion-button>
+    </div>
+  </div>
+  <div class="items">
+    <ion-item button (click)="graphs()">
+      <ion-icon name="trending-up-outline"></ion-icon>
+      <ion-label>Graphs & Reports</ion-label>
+      <ion-icon class="arrow-icon" name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item button (click)="cycle()">
+      <ion-icon name="refresh-circle-outline"></ion-icon>
+      <ion-label>Cycle and Ovulation</ion-label>
+      <ion-icon class="arrow-icon" name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item button (click)="reminders()">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-label>Reminders</ion-label>
+      <ion-icon class="arrow-icon" name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item button (click)="help()">
+      <ion-icon name="help-circle-outline"></ion-icon>
+      <ion-label>Help</ion-label>
+      <ion-icon class="arrow-icon" name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="footer">
+    <ion-label>FemSense: Period & Ovulation Tracker</ion-label>
+    <ion-label>Version 1.0.0</ion-label>
+    <ion-label>© 2023 FemSense Health Inc.</ion-label>
+    <div class="links">
+      <a type="button" (click)="privacyPolicy($event)">Privacy Policy</a> 
+      <ion-popover #privacy [isOpen]="privacyOpen" (didDismiss)="privacyOpen = false">
+        <ng-template>
+          <ion-content class="ion-padding">
+            <ion-card>
+              <ion-title>Privacy Policy</ion-title>
+              <ion-card-content>
+                A privacy policy is a statement or legal document (in privacy law) that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client's data.
+              </ion-card-content>
+            </ion-card>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+      <a type="button" (click)="termsOfUse($event)">Terms of Use</a>  
+      <ion-popover #terms [isOpen]="termsOpen" (didDismiss)="termsOpen = false">
+        <ng-template>
+          <ion-content class="ion-padding">
+            <ion-card>
+              <ion-title>Terms of Use</ion-title>
+              <ion-card-content>
+                Terms of use are the rules, specifications, and requirements for the use of a product or service. They serve as a contract between the product or service provider and user. In addition to the definition above, a terms of use agreement: Limits the liabilities that fall on your company.
+              </ion-card-content>
+            </ion-card>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+      <a type="button" (click)="accessStatement($event)">Accessibility Statement</a>  
+      <ion-popover #access [isOpen]="accessOpen" (didDismiss)="accessOpen = false">
+        <ng-template>
+          <ion-content class="ion-padding">
+            <ion-card>
+              <ion-title>Accessibility Statement</ion-title>
+              <ion-card-content>
+                Accessibility assessments are detailed and thorough services that give teams one or more of the following: A confirmation that their product complies with WCAG 2.1, up to an agreed level of compliance.
+              </ion-card-content>
+            </ion-card>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+    </div>
+  </div>
+</ion-content>

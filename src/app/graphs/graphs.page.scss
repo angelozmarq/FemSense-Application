@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+    font-family: "Patrick";
+}
+
+ion-header, ion-toolbar, ion-grid, ion-row, ion-col, ion-title, ion-card, ion-item{
+    padding: 0;
+    margin: 0;
+}
+
+ion-header{
+    box-shadow: none;
+    --background: var(--clr-primary);
+}
+
+.header{
+    text-align: center;
+    vertical-align: middle;
+    color: var(--clr-neutral);
+}
+
+ion-toolbar{
+    --background: var(--clr-primary);
+    color: var(--clr-neutral);
+    --padding-top: .5rem;
+    --padding-bottom: .5rem;
+}
+
+ion-toolbar div{
+    display: grid;
+}
+
+.header ion-icon{
+    height: 30px;
+    width: 30px;
+}
+
+.header ion-title{
+    font-weight: 600;
+}
+
+.header img{
+    height: 35px;
+    width: 35px;
+    object-fit: contain;
+    border-radius: 50%;
+    outline: 1px solid var(--clr-neutral);
+}
+
+ion-content{
+    --background: linear-gradient(0deg, var(--clr-primary), var(--clr-tertiary));
+    --padding-end: .75rem;
+    --padding-start: .75rem;
+}
+
+// Body Styles
+
+.grid{
+    margin-top: .5rem;
+}
+
+.grid ion-col{
+    margin: .5rem;
+}
+
+.reports{
+    background-color: var(--clr-neutral);
+    padding: .75rem;
+    border-radius: .5rem;
+    display: grid;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.reports p{
+    margin: 0;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.reports img{
+    width: 100%;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(10px 0px 0 rgba(0,0,0,0.05));
+}
+
+
+// Animation
+
+.reports {
+    animation: shake 0.2s linear 1;
+}
+
+@keyframes shake {
+    0% {
+        rotate: 0deg;
+    }
+    33% {
+        rotate: 10deg;
+    }
+    66% {
+        rotate: -10deg;
+    }
+    100% {
+        rotate: 10deg;
+    }
+}
+
+.reports:hover{
+    outline: 3px solid var(--clr-primary);
+}

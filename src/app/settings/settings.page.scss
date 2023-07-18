@@ -1,0 +1,244 @@
+*{
+    box-sizing: border-box;
+    font-family: "Patrick";
+}
+
+ion-header, ion-toolbar, ion-grid, ion-row, ion-col, ion-title, ion-card, ion-item{
+    padding: 0;
+    margin: 0;
+}
+
+ion-header{
+    box-shadow: none;
+    --background: var(--clr-primary);
+}
+
+.header{
+    color: var(--clr-neutral);
+}
+
+.header ion-grid{
+    background-color: var(--clr-primary);
+}
+
+ion-toolbar{
+    --background: var(--clr-primary);
+    color: var(--clr-neutral);
+    --padding-top: .5rem;
+    --padding-bottom: .5rem;
+    --padding-start: .5rem;
+    --padding-end: .5rem;
+    display: flex;
+    align-items: center;
+}
+
+.header ion-toolbar{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.header ion-icon{
+    height: 30px;
+    width: 30px;
+}
+
+.header ion-title{
+    font-weight: 600;
+}
+
+.header img{
+    height: 35px;
+    width: 35px;
+    object-fit: contain;
+    border-radius: 50%;
+    outline: 1px solid var(--clr-neutral);
+}
+
+ion-content{
+    --background: linear-gradient(0deg, var(--clr-primary), var(--clr-tertiary));
+    --padding-end: .75rem;
+    --padding-start: .75rem;
+}
+
+ion-button {
+    --background: var(--clr-primary);
+    --background-hover: var(--clr-primary);
+    --background-activated: var(--clr-secondary);
+    --background-focused: #88f4be;
+  
+    --color: var(--clr-neutral);
+  
+    --ripple-color: var(--clr-secondary);
+  
+    --padding-top: .25rem;
+    --padding-bottom: .25rem;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+  }
+
+// Body Styles
+.container{
+    margin: .75rem 0;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.3);
+    background-color: var(--clr-neutral);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.container ion-card{
+    width: 100%;
+    display: flex;
+    background: transparent;
+    box-shadow: none;
+}
+
+.container ion-icon{
+    width: 50px;
+    height: 50px;
+    padding-right: .5rem;
+}
+
+.container ion-card div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    border-radius: .25rem;
+}
+
+.container .premium-btn{
+    display: flex;
+    justify-content: center;
+    // background-color: var(--clr-secondary);
+    margin-top: 1rem;
+    padding: .5rem 0;
+    border-radius: 1rem;
+}
+
+.container .premium-btn ion-button{
+    --background: rgb(249, 249, 249, 0.5);
+    --color: var(--clr-primary);
+}
+
+.container .premium-btn{
+    background: linear-gradient(45deg,#ff9b9b,#ffd6a5,#fffec4,#ffd6a5,#ff9b9b);
+    background-size: 180% 180%;
+    animation: gradient-animation 3s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.container ion-button{
+    // max-width: 300px;
+    text-align: center;
+    font-size: .75rem;
+}
+.container ion-button ion-icon{
+    height: 20px;
+    width: 20px;
+    padding-left: .25rem;
+}
+
+.container ion-card-subtitle{
+    font-size: .75rem;
+}
+
+.container a{
+    color: var(--clr-neutral);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.goal-label{
+    padding-left: .5rem;
+    padding-top: 1rem;
+}
+
+.goal-label ion-label{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.goal-btn{
+    padding: 1rem 0;
+}
+
+.goal-btn ion-button{
+    font-size: .75rem;
+    text-transform: capitalize;
+    --background: var(--clr-neutral);
+    color: #000;
+}
+
+.goal-btn ion-button:first-child{
+    --background: var(--clr-primary);
+    color: var(--clr-neutral);
+}
+
+.items{
+    width: 100%;
+}
+
+.items ion-item{
+    width: 100%;
+}
+
+.items ion-item:first-of-type{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.items ion-item:last-of-type{
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.items ion-label{
+    margin: 0 0 0 1rem;
+    font-size: .875rem;
+    font-family: "Patrick";
+}
+
+.arrow-icon{
+    font-size: 1rem;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.footer ion-label{
+    font-size: .75rem;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links a{
+    color: var(--clr-neutral);
+    cursor: pointer;
+    padding-top: .75rem;
+}
+
+.links a:hover{
+    color: var(--clr-tertiary);
+    text-decoration: underline;
+}

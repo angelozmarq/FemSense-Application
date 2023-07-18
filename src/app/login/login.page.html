@@ -1,0 +1,53 @@
+<ion-content>
+    <div class="container">
+        <div class="inputs">
+            <div class="app-name">
+                <h1>FemSense</h1>
+                <img src="/assets/reading-side.svg" alt="">
+            </div>
+
+            <!-- USERNAME INPUT -->
+            <div class="form-control">
+                <input [(ngModel)]="username" type="text" required="true" name="username" autocomplete="off">
+                <label>
+                    <span style="transition-delay:0ms">U</span><span style="transition-delay:50ms">s</span><span style="transition-delay:100ms">e</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span>
+                </label>
+            </div>
+
+            <!-- PASSWORD INPUT -->
+            <div class="form-control">
+                <input [(ngModel)]="password" type="password" required="true" name="password" autocomplete="off">
+                <label>
+                    <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
+                </label>
+            </div>
+
+            <!-- LOGIN BUTTON -->
+            <ion-button (click)="login()" shape="round">
+                <ion-icon slot="start" name="person-outline"></ion-icon>
+                Login
+            </ion-button>
+        </div>
+        
+        <div class="help">
+            <div>
+                <ion-icon name="help-circle-outline"></ion-icon>
+                <a>Forgot Password</a>
+            </div>
+            <div>
+                <ion-icon name="call-outline"></ion-icon>
+                <a>Contact Us</a>
+            </div>
+        </div>
+        <div class="sign-up">
+            <ion-button (click)="signUp()" shape="round">
+                <ion-icon slot="start" name="person-add-outline"></ion-icon>
+                Sign Up
+            </ion-button>
+            <ion-button shape="round">
+                <ion-icon slot="start" name="logo-google"></ion-icon>
+                Continue with Google
+            </ion-button>
+        </div>
+    </div>
+</ion-content>

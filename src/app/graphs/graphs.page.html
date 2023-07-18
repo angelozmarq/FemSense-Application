@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-toolbar>
+            <ion-icon name="return-up-back-outline" (click)="settings()"></ion-icon>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <ion-title>Graphs</ion-title>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <img src="/assets/reading-side.svg" alt="">
+          </ion-toolbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>   
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="grid">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="reports">
+            <p>Cycle duration</p>
+            <img src="/assets/longer-graph.png" alt="graph image">
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="reports">
+            <p>BBT and Ovulation</p>
+            <img src="/assets/temp.png" alt="body temperature image">
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="reports">
+            <p>Nutrition</p>
+            <img src="/assets/nutri.png" alt="nutrition image">
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="reports">
+            <p>Weight</p>
+            <img src="/assets/weight.png" alt="weighing scale image">
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="reports">
+            <p>Activity</p>
+            <img src="/assets/activity.png" alt="shoe and time image">
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="reports">
+            <p>Sleep Duration</p>
+            <img src="/assets/sleep.png" alt="moon and star image">
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="reports">
+            <p>Water</p>
+            <img src="/assets/glass-of-wo-ah.png" alt="glass of water image">
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

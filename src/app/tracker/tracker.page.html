@@ -1,0 +1,159 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-toolbar>
+            <ion-icon name="return-up-back-outline" (click)="goHome()"></ion-icon>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <ion-title>Track</ion-title>
+          </ion-toolbar>
+        </ion-col>
+        <ion-col>
+          <ion-toolbar>
+            <img src="/assets/reading-side.svg" alt="">
+          </ion-toolbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>   
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="calendar">
+    <ion-datetime presentation="date" [multiple]="true" [value]="['2023-07-03', '2023-07-04', '2023-07-05', '2023-07-06', '2023-07-07']"></ion-datetime>
+  </div>
+
+  <!-- LOG SYMPTOMS CARDS -->
+  <div class="Log_symptoms">
+    <ion-title>Log your symptoms</ion-title>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Mood</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-chip *ngFor="let chip of group1Chips" [ngClass]="{'selected': chip.selected}" (click)="handleClick(chip, 'group1')">
+          <ion-avatar>
+            <ion-img [src]="'assets/emotes/' + chip.avatar + '.png'"></ion-img>
+          </ion-avatar>
+          <ion-label>{{ chip.label }}</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="Symptoms">
+      <ion-card-header>
+        <ion-card-title>Symptoms</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-chip *ngFor="let chip of group2Chips" [ngClass]="{'selected': chip.selected}" (click)="handleClick(chip, 'group2')">
+          <ion-avatar>
+            <ion-img [src]="'assets/emotes/' + chip.avatar + '.png'"></ion-img>
+          </ion-avatar>
+          <ion-label>{{ chip.label }}</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="Discharge">
+      <ion-card-header>
+        <ion-card-title>Discharge</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-chip *ngFor="let chip of group3Chips" [ngClass]="{'selected': chip.selected}" (click)="handleClick(chip, 'group3')">
+          <ion-avatar>
+            <ion-img [src]="'assets/emotes/' + chip.avatar + '.png'"></ion-img>
+          </ion-avatar>
+          <ion-label>{{ chip.label }}</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="Others">
+      <ion-card-header>
+        <ion-card-title>Others</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-chip *ngFor="let chip of group4Chips" [ngClass]="{'selected': chip.selected}" (click)="handleClick(chip, 'group4')">
+          <ion-avatar>
+            <ion-img [src]="'assets/emotes/' + chip.avatar + '.png'"></ion-img>
+          </ion-avatar>
+          <ion-label>{{ chip.label }}</ion-label>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="Water">
+      <ion-card-header>
+        <ion-card-title>Water</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="water-label">
+        <ion-item class="counter-container" lines="none">
+          <ion-icon name="water" slot="start"></ion-icon>
+          <ion-label class="counter-value">{{ waterCount }} ml</ion-label>
+          <div class="counter-buttons" slot="end">
+            <ion-icon (click)="decreaseCount()" name="remove-circle"></ion-icon>
+            <ion-icon (click)="increaseCount()" name="add-circle"></ion-icon>
+          </div>
+        </ion-item>
+        <ion-item button class="card-button" (click)="goToReminders()">
+          <ion-label>Settings and reminders</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="Weight">
+      <ion-card-header>
+        <ion-card-title>Weight</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="counter-container">
+        <ion-item class="counter-container" lines="none">
+          <ion-icon class="weight-icon" name="scale" slot="start"></ion-icon>
+          <ion-input class="counter-value" [(ngModel)]="weightInput" value="{{ weight }} kg"></ion-input>
+          <div class="counter-buttons" slot="end">
+            <ion-icon (click)="saveWeight()" name="checkmark-circle"></ion-icon>
+            <ion-icon (click)="deleteWeight()" name="close-circle"></ion-icon>
+          </div>
+        </ion-item>
+        <ion-item button class="card-button" (click)="goToReminders()">
+          <ion-label>Settings and reminders</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="Notes">
+      <ion-card-header>
+        <ion-card-title>Add Notes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="notes-container">
+          <ion-textarea [(ngModel)]="notesInput" placeholder="Enter notes" [maxlength]="maxNotesLength"></ion-textarea>
+          <div class="character-count">{{ notesInput.length }}/{{ maxNotesLength }}</div>
+        </div>
+    
+        <div class="image-container">
+          <ion-label>Attach Image (Max 2MB):</ion-label>
+          <input style="display: none;" id="pic" type="file" accept="image/*" (change)="handleImageUpload($event)">
+          <label slot="end" for="pic"><ion-icon name="attach"></ion-icon></label>
+        </div>
+    
+        <div class="image-preview" *ngIf="imagePreview">
+          <img [src]="imagePreview" alt="Image Preview">
+          <ion-icon (click)="removeImage()" color="danger" name="trash"></ion-icon>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <!-- FLOATING SAVE BUTTON -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon (click)="showAlert()" name="checkmark-done-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>

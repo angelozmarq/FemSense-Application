@@ -1,0 +1,104 @@
+<ion-header [translucent]="true">
+  <ion-header [translucent]="true">
+    <div class="header">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-toolbar>
+              <ion-icon name="return-up-back-outline" (click)="settings()"></ion-icon>
+            </ion-toolbar>
+          </ion-col>
+          <ion-col>
+            <ion-toolbar>
+              <ion-title>Reminders</ion-title>
+            </ion-toolbar>
+          </ion-col>
+          <ion-col>
+            <ion-toolbar>
+              <img src="/assets/reading-side.svg" alt="">
+            </ion-toolbar>
+          </ion-col>
+        </ion-row>
+      </ion-grid>   
+    </div>
+  </ion-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="items">
+    <div class="options">
+      <ion-label>Notification</ion-label>
+      <ion-toggle [checked]="true"></ion-toggle>
+    </div>
+    <p>Enable this to receive push notifications from FemSense.</p>
+  </div>
+  <div class="items">
+    <ion-label>Sounds</ion-label>
+    <div class="options">
+      <ion-label>Notification Sound</ion-label>
+      <ion-select aria-label="notification-sound" interface="popover" placeholder="Sound 1">
+        <ion-select-option value="1">Sound 1</ion-select-option>
+        <ion-select-option value="2">Sound 2</ion-select-option>
+        <ion-select-option value="3">Sound 3</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+  <div class="items">
+    <ion-label>Cycle</ion-label>
+    <div class="options">
+      <ion-label>Period in a couple of days</ion-label>
+      <div>
+        <ion-datetime-button datetime="datetime1"></ion-datetime-button>
+      
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime1" value="2023-06-17T08:00:00"  presentation="time"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </div>
+    </div>
+    <div class="options">
+      <ion-label>Ovulation</ion-label>
+            <div>
+        <ion-datetime-button datetime="datetime2"></ion-datetime-button>
+      
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime2" value="2023-06-17T08:00:00"  presentation="time"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </div>
+    </div>
+    <div class="options">
+      <ion-label>Period end</ion-label>
+            <div>
+        <ion-datetime-button datetime="datetime3"></ion-datetime-button>
+      
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime3" value="2023-06-17T08:00:00"  presentation="time"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </div>
+    </div>
+    <div class="options">
+      <ion-label>Period start</ion-label>
+            <div>
+        <ion-datetime-button datetime="datetime4"></ion-datetime-button>
+      
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime4" value="2023-06-17T08:00:00"  presentation="time"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </div>
+    </div>
+  </div>
+  <div class="items">
+    <ion-label>Medication and Contraception</ion-label>
+    <div class="options">
+      <ion-label>Contraception</ion-label>
+      <ion-toggle [checked]="false"></ion-toggle>
+    </div>
+  </div>
+</ion-content>

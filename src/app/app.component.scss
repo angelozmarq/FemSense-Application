@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+    font-family: "Patrick";
+}
+
+ion-app{
+  background: linear-gradient(0deg, var(--clr-primary), var(--clr-tertiary));
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+}
+
+ion-router-outlet{
+    width: 100%;
+}
+
+ion-tabs{
+    width: 100%;
+    // max-width: 800px;
+}
+
+.tabs ion-tab-bar{
+    --background: var(--clr-neutral);
+    border-radius: 3rem;
+    margin: 1rem;
+    box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.3);
+}
+
+.tabs ion-tab-button{
+    margin: 0;
+    padding: 0;
+    --background-focused: var(--clr-secondary);
+    --ripple-color: var(--clr-tertiary);
+}
+
+.tabs ion-tab-button a{
+    padding: 0;
+}
+.tabs ion-icon{
+    color: var(--clr-primary);
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+.tabs ion-icon:hover {
+	-webkit-animation: rotate-scale-up 0.4s linear both;
+	        animation: rotate-scale-up 0.4s linear both;
+}
+
+ @-webkit-keyframes rotate-scale-up {
+    0% {
+      -webkit-transform: scale(1) rotateZ(0);
+              transform: scale(1) rotateZ(0);
+    }
+    50% {
+      -webkit-transform: scale(2) rotateZ(180deg);
+              transform: scale(2) rotateZ(180deg);
+    }
+    100% {
+      -webkit-transform: scale(1.5) rotateZ(360deg);
+              transform: scale(1.5) rotateZ(360deg);
+    }
+  }
+  @keyframes rotate-scale-up {
+    0% {
+      -webkit-transform: scale(1) rotateZ(0);
+              transform: scale(1) rotateZ(0);
+    }
+    50% {
+      -webkit-transform: scale(2) rotateZ(180deg);
+              transform: scale(2) rotateZ(180deg);
+    }
+    100% {
+      -webkit-transform: scale(1.5) rotateZ(360deg);
+              transform: scale(1.5) rotateZ(360deg);
+    }
+  }
+  
+
+.active{
+    --background: var(--clr-tertiary);
+    background-color: var(--clr-tertiary);
+    border-bottom: 3px solid var(--clr-secondary);
+}
+
+ion-button {
+  --background: var(--clr-primary);
+  --background-hover: var(--clr-primary);
+  --background-activated: var(--clr-secondary);
+  --background-focused: #88f4be;
+
+  --color: var(--clr-neutral);
+
+  --ripple-color: var(--clr-secondary);
+
+  --padding-top: .25rem;
+  --padding-bottom: .25rem;
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  margin-top: 1rem;
+}

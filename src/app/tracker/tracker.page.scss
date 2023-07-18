@@ -1,0 +1,208 @@
+// TOOLBAR CSS
+ion-header, ion-toolbar, ion-grid, ion-row, ion-col, ion-title, ion-card, ion-item{
+    padding: 0;
+    margin: 0;
+}
+
+ion-header{
+    box-shadow: none;
+    --background: var(--clr-primary);
+}
+
+.header{
+    color: var(--clr-neutral);
+}
+
+.header ion-grid{
+    background-color: var(--clr-primary);
+}
+
+ion-toolbar{
+    --background: var(--clr-primary);
+    color: var(--clr-neutral);
+    --padding-top: .5rem;
+    --padding-bottom: .5rem;
+    --padding-start: .5rem;
+    --padding-end: .5rem;
+    display: flex;
+    align-items: center;
+}
+
+.header ion-toolbar{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.header ion-icon{
+    height: 30px;
+    width: 30px;
+}
+
+.header ion-title{
+    font-weight: 600;
+    font-family: "Patrick";
+}
+
+.header img{
+    height: 35px;
+    width: 35px;
+    object-fit: contain;
+    border-radius: 50%;
+    outline: 1px solid var(--clr-neutral);
+}
+
+ion-button {
+    --color: black;
+    --background: transparent;
+    --box-shadow: none;
+}
+
+ion-content{
+    --background: linear-gradient(0deg, var(--clr-primary), var(--clr-tertiary));
+    font-family: "LegoHouse";
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+ion-content::-webkit-scrollbar {
+    display: none;
+}
+
+// CALENDAR
+.calendar{
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 90%;
+}
+ion-datetime {
+    --background: rgba(255, 255, 255, 0.664);
+    --background-rgb: 255, 241, 242;
+
+    border-radius: 16px;
+    box-shadow: rgba(var(--ion-color-rose-rgb), 0.3) 0px 10px 15px -3px;
+}
+
+// SYMPTOMS LOG
+.Log_symptoms ion-title {
+    justify-content: center;
+    font-size: 1rem;
+    margin-left: 2rem;
+}
+
+.Log_symptoms {
+    padding-bottom: 4rem;
+}
+
+ion-chip {
+    --background: rgb(255, 255, 219);
+    --color: black;
+}
+
+ion-card {
+    border-radius: 16px;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+ion-label {
+    font-size: 10px;
+}
+
+ion-card-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+ion-button {
+    --border-radius: 16px;
+    width: fit-content;
+}
+
+.selected {
+    outline: 2px solid var(--clr-primary);
+}
+  
+.custom-button {
+    background-color:rgb(255, 255, 219);
+    color: black;
+}
+
+ion-card-content {
+    white-space: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+ion-card-content::-webkit-scrollbar {
+    display: none;
+}
+
+.Water ion-icon {
+    font-size: 3rem;
+    color: rgb(65, 65, 251);
+}
+
+.counter-value {
+    text-align: center;
+}
+
+.counter-buttons ion-icon {
+    font-size: 2rem;
+    color: var(--clr-primary);
+    margin: 0 5px;
+}
+
+.card-button ion-label {
+    font-size: 12px;
+}
+
+ion-item.card-button  {
+    --border-radius: 15px;
+    --background:#ffffdb;
+}
+
+.weight-icon {
+    font-size: 3rem;
+}
+
+.image-container label {
+    font-size: 2rem;
+    float: right;
+    color: rgb(65, 65, 251);
+}
+
+.image-preview {
+    display: flex;
+    max-width: 100%;
+}
+
+.image-preview img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+
+.image-preview ion-icon {
+    font-size: 2rem;
+    color: var(--clr-primary);
+    margin: auto 0;
+}
+
+ion-fab-button::part(native) {
+    background-color: var(--clr-tertiary);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    color: var(--clr-primary);
+}
+
+@media screen and (min-width: 600px) {
+    .Log_symptoms {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+    }
+}
+

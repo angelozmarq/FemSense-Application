@@ -1,0 +1,251 @@
+*{
+    font-family: "Patrick";
+}
+
+ion-content{
+    --background: linear-gradient(0deg, var(--clr-primary), var(--clr-tertiary));
+    --padding-end: .75rem;
+    --padding-start: .75rem;
+}
+
+ion-button {
+    --background: var(--clr-primary);
+    --background-hover: var(--clr-primary);
+    --background-activated: var(--clr-secondary);
+    --background-focused: #88f4be;
+  
+    --color: var(--clr-neutral);
+  
+    --ripple-color: var(--clr-secondary);
+  
+    --padding-top: .25rem;
+    --padding-bottom: .25rem;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+  }
+
+// Body Styles
+.container{
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.inputs{
+    padding: 1rem;
+    position: relative;
+    display: grid;
+    justify-content: center;
+}
+
+.app-name{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  @keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  
+.app-name h1{
+    width: 100%;
+    box-shadow: 2px 2px 2px rgb(0,0,0,0.3);
+	-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.app-name img{
+    max-height: 600px;
+}
+
+h1{
+    margin: 0;
+    color: var(--clr-primary);
+    font-size: 3rem;
+    font-weight: 600;
+    background-color: var(--clr-neutral);
+    text-align: center;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.form-control {
+    position: relative;
+    margin-bottom: 1.5rem;
+    // width: 190px;
+    background-color: var(--clr-neutral);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+  }
+
+.form-control:last-of-type{
+  margin-bottom: 1rem;
+}
+  
+  .form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px var(--clr-neutral) solid;
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    font-size: 1rem;
+    color: var(--clr-primary);
+    height: 2rem;
+  }
+  
+  .form-control input:focus,
+  .form-control input:valid {
+    outline: 0;
+    border-bottom-color: var(--clr-primary);
+  }
+  
+  .form-control label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    pointer-events: none;
+  }
+  
+  .form-control label span {
+    display: inline-block;
+    font-size: 16px;
+    min-width: 5px;
+    color: var(--clr-primary);
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .form-control input:focus+label span,
+  .form-control input:valid+label span {
+    color: var(--clr-neutral);
+    transform: translateY(-35px);
+    font-size: .75rem;
+  }
+
+.help{
+    padding: 0 2rem;
+    margin-bottom: .5rem;
+    min-height: 30px;
+}
+
+.help div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.help ion-icon{
+    color: var(--clr-neutral);
+    margin-right: .5rem;
+}
+
+.help a{
+    color: var(--clr-neutral);
+    text-decoration: none;
+}
+
+.help div:hover a{
+    animation: fade-out 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.help div:hover ion-icon{
+    scale: 1.5;
+    background-color: var(--clr-neutral);
+    color: var(--clr-primary);
+    padding: .25rem;
+    border-radius: 50%;
+    -webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    box-shadow: 2px 2px 3px rgba($color: #000000, $alpha: 0.3);
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-right
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(20px);
+              transform: translateX(20px);
+    }
+  }
+  @keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(20px);
+              transform: translateX(20px);
+    }
+  }
+  
+  @-webkit-keyframes fade-out {
+    0% {
+        opacity: 100%;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+    100% {
+        opacity: 0%;
+        -webkit-transform: translateX(-20px);
+                transform: translateX(-20px);
+    }
+  }
+  @keyframes fade-out {
+    0% {
+        opacity: 100%;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+    100% {
+        opacity: 0%;
+        -webkit-transform: translateX(-20px);
+                transform: translateX(-20px);
+    }
+  }
+
+.sign-up{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0 .5rem;
+}
+
+.sign-up ion-button:last-child{
+  --background: var(--clr-neutral);
+  --color: var(--clr-primary);
+}

@@ -1,0 +1,7 @@
+{
+  "name": "FemSense",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
