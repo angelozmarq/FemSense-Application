@@ -4,7 +4,7 @@
       <ion-row>
         <ion-col>
           <ion-toolbar>
-            <ion-icon name="return-up-back-outline" (click)="home()"></ion-icon>
+            <ion-icon name="return-up-back-outline" (click)="home(1)"></ion-icon>
           </ion-toolbar>
         </ion-col>
         <ion-col>
@@ -87,7 +87,7 @@
       <a type="button" (click)="privacyPolicy($event)">Privacy Policy</a> 
       <ion-popover #privacy [isOpen]="privacyOpen" (didDismiss)="privacyOpen = false">
         <ng-template>
-          <ion-content class="ion-padding">
+          <ion-content class="ion-padding popover-content">
             <ion-card>
               <ion-title>Privacy Policy</ion-title>
               <ion-card-content>
@@ -100,7 +100,7 @@
       <a type="button" (click)="termsOfUse($event)">Terms of Use</a>  
       <ion-popover #terms [isOpen]="termsOpen" (didDismiss)="termsOpen = false">
         <ng-template>
-          <ion-content class="ion-padding">
+          <ion-content class="ion-padding popover-content">
             <ion-card>
               <ion-title>Terms of Use</ion-title>
               <ion-card-content>
@@ -113,7 +113,7 @@
       <a type="button" (click)="accessStatement($event)">Accessibility Statement</a>  
       <ion-popover #access [isOpen]="accessOpen" (didDismiss)="accessOpen = false">
         <ng-template>
-          <ion-content class="ion-padding">
+          <ion-content class="ion-padding popover-content">
             <ion-card>
               <ion-title>Accessibility Statement</ion-title>
               <ion-card-content>

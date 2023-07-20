@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+import { TabServiceService } from '../tab-service.service';
 
 @Component({
   selector: 'app-tracker',
@@ -12,7 +13,8 @@ export class TrackerPage implements OnInit {
   constructor(
     private router:Router,
     private alertController: AlertController,
-    private toastController: ToastController) {}
+    private toastController: ToastController,
+    private tabService: TabServiceService) {}
 
   // VARIABLE DECLARATIONS
   waterCount: number = 0;
@@ -20,13 +22,15 @@ export class TrackerPage implements OnInit {
   weight: number = 0;
 
   ngOnInit() {
+    this.tabService.setActiveTab(2);
   }
 
   // NAVIGATIONS
   goToTracker() {
     this.router.navigate(['/tracker'])
   }
-  goHome (){
+  goHome (tabNumber: number){
+    this.tabService.setActiveTab(tabNumber);
     this.router.navigate(['/home'])
   }
   goToSettings (){

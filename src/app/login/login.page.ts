@@ -23,7 +23,6 @@ export class LoginPage implements OnInit {
     // USERNAME AND PASSWORD MATCH
     if (this.username === 'admin' && this.password === 'password') {
       this.router.navigate(['/home']);
-      showTab();
 
     // CLEAR INPUT
     this.username = '';
@@ -33,6 +32,8 @@ export class LoginPage implements OnInit {
       // USERNAME AND PASSWORD DOES NOT MATCH
       this.notUser();
     }
+
+    showTab();
   }
 
   // TOAST FOR NOT MATCH

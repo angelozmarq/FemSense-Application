@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { hideTab } from '../app.component';
+
+import { TabServiceService } from '../tab-service.service';
 
 @Component({
   selector: 'app-settings',
@@ -8,50 +10,69 @@ import { hideTab } from '../app.component';
   styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
-  
-  @ViewChild('privacy')
-  privacy!: { event: Event; };
+
   privacyOpen = false;
-  privacyPolicy(e: Event) {
-    this.privacy.event = e;
-    this.privacyOpen = true;
-  }
-  @ViewChild('terms')
-  terms!: { event: Event; };
   termsOpen = false;
-  termsOfUse(e: Event) {
-    this.terms.event = e;
-    this.termsOpen = true;
-  }
-  @ViewChild('access')
-  access!: { event: Event; };
   accessOpen = false;
-  accessStatement(e: Event) {
-    this.access.event = e;
-    this.accessOpen = true;
+
+  privacyPolicy(ev: Event) {
+    this.privacyOpen = true;
+    const popover = document.querySelector('ion-popover');
+    if (popover) {
+      popover.addEventListener('ionPopoverDidDismiss', () => {
+        this.privacyOpen = false;
+      });
+    }
   }
 
-  constructor(private router: Router) { }
+  termsOfUse(ev: Event) {
+    this.termsOpen = true;
+    const popover = document.querySelector('ion-popover');
+    if (popover) {
+      popover.addEventListener('ionPopoverDidDismiss', () => {
+        this.termsOpen = false;
+      });
+    }
+  }
+
+  accessStatement(ev: Event) {
+    this.accessOpen = true;
+    const popover = document.querySelector('ion-popover');
+    if (popover) {
+      popover.addEventListener('ionPopoverDidDismiss', () => {
+        this.accessOpen = false;
+      });
+    }
+  }
+
+  constructor(
+    private router: Router,
+    private tabService: TabServiceService) { }
 
   ngOnInit() {
+    this.tabService.setActiveTab(4);
   }
 
-  home(){
+  home(tabNumber: number){
+    this.tabService.setActiveTab(tabNumber);
     this.router.navigate(['/home'])
   }
 
   login(){
     this.router.navigate(['/login'])
-    hideTab()  
+    hideTab();  
   }
 
   graphs(){
+    hideTab();
     this.router.navigate(['/graphs'])
   }
   cycle(){
+    hideTab();
     this.router.navigate(['/cycle'])
   }
   reminders(){
+    hideTab();
     this.router.navigate(['/reminders'])
   }
   help(){

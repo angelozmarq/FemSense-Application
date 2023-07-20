@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { showTab } from '../app.component';
 
 @Component({
   selector: 'app-reminders',
@@ -14,6 +15,7 @@ export class RemindersPage implements OnInit {
   }
 
   settings(){
+    showTab();
     this.router.navigate(['/settings'])
   }
 

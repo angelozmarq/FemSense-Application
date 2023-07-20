@@ -19,6 +19,10 @@ ion-header{
     color: var(--clr-neutral);
 }
 
+.header ion-grid{
+    background-color: var(--clr-primary);
+}
+
 ion-toolbar{
     --background: var(--clr-primary);
     color: var(--clr-neutral);
