@@ -242,3 +242,14 @@ ion-button {
     color: var(--clr-tertiary);
     text-decoration: underline;
 }
+
+.popover-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-title{
+        padding-inline: 1rem;
+    }
+}
+

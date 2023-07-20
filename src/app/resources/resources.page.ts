@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TabServiceService } from '../tab-service.service';
 
 @Component({
   selector: 'app-resources',
@@ -9,15 +10,17 @@ import { Router } from '@angular/router';
 
 export class ResourcesPage implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private tabService: TabServiceService) {}
 
   ngOnInit() {
     this.allResources = this.resources;
     this.filteredResources = this.resources;
+    this.tabService.setActiveTab(3);
   }
 
   // NAVIGATION
-  home(){
+  home(tabNumber: number){
+    this.tabService.setActiveTab(tabNumber);
     this.router.navigate(['/home'])
   }
 

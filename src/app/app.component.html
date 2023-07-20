@@ -3,16 +3,16 @@
     <div class="tabs">
       <ion-tabs>  
         <ion-tab-bar id="tabs" slot="bottom">
-          <ion-tab-button [ngClass]="{ 'active' : isValue === 1 }" (click)="toggle1()" type="button" tab="home">
+          <ion-tab-button [ngClass]="{ 'active' : tabService.getActiveTab() === 1 }" (click)="toggleTab(1)" type="button" tab="home">
             <ion-icon name="home-outline"></ion-icon>
           </ion-tab-button>
-          <ion-tab-button [ngClass]="{ 'active' : isValue === 2 }" (click)="toggle2()" type="button" tab="tracker">
+          <ion-tab-button [ngClass]="{ 'active' : tabService.getActiveTab() === 2 }" (click)="toggleTab(2)" type="button" tab="tracker">
             <ion-icon name="water-outline"></ion-icon>
           </ion-tab-button>
-          <ion-tab-button [ngClass]="{ 'active' : isValue === 3 }" (click)="toggle3()" type="button" tab="resources">
+          <ion-tab-button [ngClass]="{ 'active' : tabService.getActiveTab() === 3 }" (click)="toggleTab(3)" type="button" tab="resources">
             <ion-icon name="file-tray-full-outline"></ion-icon>
           </ion-tab-button>
-          <ion-tab-button [ngClass]="{ 'active' : isValue === 4 }" (click)="toggle4()" type="button" tab="settings">
+          <ion-tab-button [ngClass]="{ 'active' : tabService.getActiveTab() === 4 }" (click)="toggleTab(4)" type="button" tab="settings">
             <ion-icon name="settings-outline"></ion-icon>
           </ion-tab-button>
         </ion-tab-bar>

@@ -96,7 +96,7 @@ ion-list{
     background: transparent;
 }
 ion-card{
-    padding: .5rem;
+    padding: 1rem;
     margin: 1rem .5rem;
     --background: var(--clr-neutral);
 }
@@ -105,7 +105,18 @@ ion-card img{
     height: 200px;
     object-fit: cover;
     object-position: center;
+    animation: imageScale 5s ease-in-out infinite;
 }
+
+@keyframes imageScale {
+	0% {transform: scale(.98);
+        border-radius: .5rem;}
+	50% { transform: scale(1);
+        border-radius: 0;}
+  100% { transform: scale(.98);
+        border-radius: .5rem;}
+}
+
 ion-card-header{
     padding: 0 .5rem;
 }

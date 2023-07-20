@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { TabServiceService } from './tab-service.service';
+
 import { register } from 'swiper/element/bundle';
 
 register();
@@ -11,10 +14,10 @@ register();
 })
 export class AppComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public tabService: TabServiceService) {}
 
   beenClicked: boolean = false;
-  public isValue: number = 0;
+  public isValue: number = 1;
 
   home(){
     const swiper = document.getElementById('swiper');
@@ -24,10 +27,13 @@ export class AppComponent {
     this.router.navigate(['/home'])
   }
 
-  toggle1() { this.isValue = 1; }
-  toggle2() { this.isValue = 2; }
-  toggle3() { this.isValue = 3; }
-  toggle4() { this.isValue = 4; }
+  toggleTab(tabNumber: number) {
+    this.tabService.setActiveTab(tabNumber);
+  }
+  // toggleHome() { this.isValue = 1; }
+  // toggleTracker() { this.isValue = 2; }
+  // toggleResources() { this.isValue = 3; }
+  // toggleSettings() { this.isValue = 4; }
 }
 
 export function showTab() {
